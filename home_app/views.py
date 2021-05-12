@@ -20,11 +20,11 @@ def checkout(request):
 
 
 def portfolio(request):
-    pass
+    return render(request, 'services.html')
 
 
 def contactus(request):
-    pass
+    return render(request, 'contact.html')
 
 
 def package(request):

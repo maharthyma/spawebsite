@@ -1,106 +1,543 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Login V14</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
-</head>
+{% include 'Head.html' %}
 <body>
-	
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-				<form class="login100-form validate-form flex-sb flex-w">
-					<span class="login100-form-title p-b-32">
-						Account Login
-					</span>
+<!-- banner -->
+<div class="banner jarallax" id="home">
+    <img class="jarallax-img" src="{% static 'images/22.jpg' %}" alt="">
+    <header>
+        <div class="container">
+            <div class="header-bottom-agileits">
+                <div class="w3-logo">
+                    <h1><a href="index.html">Beauty Salon</a></h1>
+                </div>
+                <div class="address">
+                    <p>4th block,New York City.</p>
+                    <p class="para-y"><a href="about.html">Get more info</a></p>
+                </div>
+                <div class="nav-contact-w3ls">
+                    <p>+0 111 222 333<span class="fa fa-phone" aria-hidden="true"></span></p>
+                    <p class="para-y"><a href="mailto:info@example.com">info@example.com</a><span
+                            class="fa fa-envelope-o" aria-hidden="true"></span></p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </header>
+    <!-- navigation -->
+    <div class="nav-bg">
+        <div class="container">
+            <nav class="navbar navbar-default shift">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-					<span class="txt1 p-b-11">
-						Username
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
-						<input class="input100" type="text" name="username" >
-						<span class="focus-input100"></span>
-					</div>
-					
-					<span class="txt1 p-b-11">
-						Password
-					</span>
-					<div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required">
-						<span class="btn-show-pass">
-							<i class="fa fa-eye"></i>
-						</span>
-						<input class="input100" type="password" name="pass" >
-						<span class="focus-input100"></span>
-					</div>
-					
-					<div class="flex-sb-m w-full p-b-48">
-						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-							<label class="label-checkbox100" for="ckb1">
-								Remember me
-							</label>
-						</div>
+                </div>
 
-						<div>
-							<a href="#" class="txt3">
-								Forgot Password?
-							</a>
-						</div>
-					</div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">Pages<b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu agile_short_dropdown">
+                                <li><a href="icons.html">Web Icons</a></li>
+                                <li><a href="typography.html">Typography</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
 
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Login
-						</button>
-					</div>
+                </div>
+                <!-- /.navbar-collapse -->
 
-				</form>
-			</div>
-		</div>
-	</div>
-	
+            </nav>
+        </div>
+    </div>
+    <!-- //navigation -->
+    <div class="container">
+        <!-- header -->
+        <!-- //header -->
+        <div class="agileits_w3layouts_banner_info">
+            <section class="slider">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <div class="banner-text-w3-agileits">
+                                <h5>Experienced hair stylists </h5>
+                                <h2>Enjoy Professional Beauty Services!</h2>
+                                <p>Providing expert skin care advice & beauty services using natural products to cater
+                                    for any skin.</p>
+                                <div class="botton">
+                                    <a href="contact.html">Contact Now</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="banner-text-w3-agileits">
+                                <h5>The best and fastest service</h5>
+                                <h2>Are You Planning to Pamper Yourself?</h2>
+                                <p>Providing expert skin care advice & beauty services using natural products to cater
+                                    for any skin.</p>
+                                <div class="botton">
+                                    <a href="contact.html">Contact Now</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="banner-text-w3-agileits">
+                                <h5>Experienced hair stylists </h5>
+                                <h2>Enjoy Professional Beauty Services!</h2>
+                                <p>Providing expert skin care advice & beauty services using natural products to cater
+                                    for any skin.</p>
+                                <div class="botton">
+                                    <a href="contact.html">Contact Now</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- //banner -->
 
-	<div id="dropDownSelect1"></div>
-	
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
 
+<!-- Modal1 -->
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4>Beauty Salon</h4>
+                <img src="{% static 'images/11.jpg' %}" alt=" " class="img-responsive">
+                <h5>Neque porro quisquam est qui dolorem </h5>
+                <p>Ut in ligula sollicitudin, auctor elit vel, mollis tortor. Nullam id magna in eros mollis porttitor
+                    vel et eros.Phasellus
+                    sed iaculis nibh, non suscipit tortor. Aenean ante massa, lobortis et dolor eget, sollicitudin
+                    luctus arcu. Donec eros
+                    tortor, ultrices in lectus quis, aliquet commodo lectus.Donec eros tortor, ultrices in lectus quis,
+                    aliquet commodo
+                    lectus.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Modal1 -->
+<!-- Latest News -->
+<div class="practice-areas">
+    <div class="container">
+        <div class="wthree_head_section">
+            <h3 class="w3l_header">Our <span>Services</span></h3>
+            <p>Treat yourself to a facial or celebrating a special occasion, aromatherapy, our beauty
+                and skin care services will suit every beauty need.</p>
+        </div>
+        <div class="area-main">
+            <div class="col-md-6 area-inner">
+                <div class="area-img1">
+                </div>
+                <div class="area-right p1">
+                    <h5>FACIAL</h5>
+                    <p class="para-w3-agile">Phasellus sed iaculis nibh, non suscipit tortor. Aenean ante massa,
+                        lobortis et dolor eget, sollicitudin luctus
+                        arcu.
+                        Donec eros tortor, ultrices in lectus quis, aliquet commodo lectus.</p>
+                </div>
+            </div>
+            <div class="col-md-6 area-inner">
+                <div class="area-img2">
+                </div>
+                <div class="area-right p2">
+                    <h5>MAKEUP</h5>
+                    <p class="para-w3-agile">Phasellus sed iaculis nibh, non suscipit tortor. Aenean ante massa,
+                        lobortis et dolor eget, sollicitudin luctus
+                        arcu.
+                        Donec eros tortor, ultrices in lectus quis, aliquet commodo lectus.</p>
+                </div>
+            </div>
+        </div>
+        <div class="area-main">
+            <div class="col-md-6 area-inner">
+                <div class="area-right p3">
+                    <h5>NAIL CARE</h5>
+                    <p class="para-w3-agile">Phasellus sed iaculis nibh, non suscipit tortor. Aenean ante massa,
+                        lobortis et dolor eget, sollicitudin luctus
+                        arcu.
+                        Donec eros tortor, ultrices in lectus quis, aliquet commodo lectus.</p>
+                </div>
+                <div class="area-img3">
+                </div>
+            </div>
+            <div class="col-md-6 area-inner">
+                <div class="area-right p4">
+                    <h5>HAIR CARE</h5>
+                    <p class="para-w3-agile">Phasellus sed iaculis nibh, non suscipit tortor. Aenean ante massa,
+                        lobortis et dolor eget, sollicitudin luctus
+                        arcu.
+                        Donec eros tortor, ultrices in lectus quis, aliquet commodo lectus.</p>
+                </div>
+                <div class="area-img4">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Latest News -->
+<!-- wthree-mid -->
+<div class="wthree-mid jarallax">
+    <img class="jarallax-img" src="{% static 'images/33.jpg' %}" alt="">
+    <div class="container">
+        <h3>Nisl amet dolor sit ipsum veroeros sed blandit</h3>
+        <p>Standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+            make a type specimen book</p>
+        <div class="botton">
+            <a href="about.html">About Us</a>
+        </div>
+    </div>
+</div>
+<!-- //wthree-mid -->
+<!-- pricing -->
+<div class="w3ls-section wthree-pricing" id="pricing">
+    <div class="container">
+        <div class="wthree_head_section">
+            <h3 class="w3l_header">Packages <span>Pricing</span></h3>
+            <p>Treat yourself to a facial or celebrating a special occasion, aromatherapy, our beauty
+                and skin care services will suit every beauty need.</p>
+        </div>
+        <div class="pricing-grids-info">
+            <div class="pricing-grid grid-one">
+                <div class="w3ls-top">
+                    <h3>Basic</h3>
+                </div>
+                <div class="w3ls-bottom">
+                    <ul class="count">
+                        <li>Hair Extension</li>
+                        <li>Makeup Application</li>
+                        <li>Facial</li>
+                        <li>Nails</li>
+                        <li>Styling</li>
+                    </ul>
+                    <h4> 200<span class="sup">$</span></h4>
+                    <div class="more">
+                        <a href="contact.html">Contact Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-grid grid-two">
+                <div class="w3ls-top">
+                    <h3>Classic</h3>
+                </div>
+                <div class="w3ls-bottom">
+                    <ul class="count">
+                        <li>Hair Extension</li>
+                        <li>Makeup Application</li>
+                        <li>Facial</li>
+                        <li>Nails</li>
+                        <li>Styling</li>
+                    </ul>
+                    <h4> 350<span class="sup">$</span></h4>
+                    <div class="more">
+                        <a href="contact.html">Contact Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-grid grid-three">
+                <div class="w3ls-top">
+                    <h3>Gold</h3>
+                </div>
+                <div class="w3ls-bottom">
+                    <ul class="count">
+                        <li>Hair Extension</li>
+                        <li>Makeup Application</li>
+                        <li>Facial</li>
+                        <li>Nails</li>
+                        <li>Styling</li>
+                    </ul>
+                    <h4> 500<span class="sup">$</span></h4>
+                    <div class="more">
+                        <a href="contact.html">Contact Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="zb pricing-grid grid-four">
+                <div class="w3ls-top">
+                    <h3>Platinum</h3>
+                </div>
+                <div class="w3ls-bottom">
+                    <ul class="count">
+                        <li>Hair Extension</li>
+                        <li>Makeup Application</li>
+                        <li>Facial</li>
+                        <li>Nails</li>
+                        <li>Styling</li>
+                    </ul>
+                    <h4> 800<span class="sup">$</span></h4>
+                    <div class="more">
+                        <a href="contact.html">Contact Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <!--End-slider-script-->
+        </div>
+    </div>
+</div>
+<!--//pricing-->
+<!-- counter -->
+<div class="services-bottom jarallax">
+    <img class="jarallax-img" src="{% static 'images/11.jpg' %}" alt="">
+    <div class="banner-dott1">
+        <div class="container">
+            <div class="wthree_head_section">
+                <h3 class="w3l_header two">Our <span>Statistics</span></h3>
+                <p class="tho">Treat yourself to a facial or celebrating a special occasion, aromatherapy, our beauty
+                    and skin care services will suit every beauty need.</p>
+            </div>
+            <div class="wthree-agile-counter">
+                <div class="col-md-3 w3_agile_stats_grid-top">
+                    <div class="w3_agile_stats_grid">
+                        <div class="agile_count_grid_left">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </div>
+                        <div class="agile_count_grid_right">
+                            <p class="counter">324</p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <h4>Services</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 w3_agile_stats_grid-top">
+                    <div class="w3_agile_stats_grid">
+                        <div class="agile_count_grid_left">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        </div>
+                        <div class="agile_count_grid_right">
+                            <p class="counter">543</p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <h4>Happy Clients</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 w3_agile_stats_grid-top">
+                    <div class="w3_agile_stats_grid">
+                        <div class="agile_count_grid_left">
+                            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                        </div>
+                        <div class="agile_count_grid_right">
+                            <p class="counter">434</p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <h4>People Loved</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 w3_agile_stats_grid-top">
+                    <div class="w3_agile_stats_grid">
+                        <div class="agile_count_grid_left">
+                            <span class="fa fa-trophy" aria-hidden="true"></span>
+                        </div>
+                        <div class="agile_count_grid_right">
+                            <p class="counter">234</p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <h4>Win Awards</h4>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //counter -->
+<!-- Clients -->
+<div class="clients-main" id="clients">
+    <div class="container">
+        <!-- Owl-Carousel -->
+        <div class="wthree_head_section">
+            <h3 class="w3l_header">What <span>People Say</span></h3>
+            <p>Treat yourself to a facial or celebrating a special occasion, aromatherapy, our beauty
+                and skin care services will suit every beauty need.</p>
+        </div>
+        <div id="owl-demo" class="owl-carousel text-center clients-right">
+            <div class="item g1">
+                <div class="agile-dish-caption">
+                    <h4>John Smith</h4>
+                    <span>Lorem Ipsum</span>
+                </div>
+                <img class="lazyOwl" src="{% static 'images/c1.jpg' %}" alt=""/>
+                <div class="clearfix"></div>
+                <p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span>Duis nulla nulla,
+                    faucibus id diam ac, luctus sodales
+                    purus.
+                    Quisque nibh ipsum,Ut accumsan.</p>
+            </div>
+            <div class="item g1">
+                <div class="agile-dish-caption">
+                    <h4>Jecy Deoco</h4>
+                    <span>Lorem Ipsum</span>
+                </div>
+                <img class="lazyOwl" src="{% static 'images/c2.jpg' %}" alt=""/>
+                <div class="clearfix"></div>
+                <p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span>Duis nulla nulla,
+                    faucibus id diam ac, luctus sodales
+                    purus.
+                    Quisque nibh ipsum,Ut accumsan.</p>
+            </div>
+            <div class="item g1">
+                <div class="agile-dish-caption">
+                    <h4>Devid Fahim</h4>
+                    <span>Lorem Ipsum</span>
+                </div>
+                <img class="lazyOwl" src="{% static 'images/c3.jpg' %}" alt=""/>
+                <div class="clearfix"></div>
+                <p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span>Duis nulla nulla,
+                    faucibus id diam ac, luctus sodales
+                    purus.
+                    Quisque nibh ipsum,Ut accumsan.</p>
+            </div>
+            <div class="item g1">
+                <div class="agile-dish-caption">
+                    <h4>Honey Jisa</h4>
+                    <span>Lorem Ipsum</span>
+                </div>
+                <img class="lazyOwl" src="{% static 'images/c1.jpg' %}" alt=""/>
+                <div class="clearfix"></div>
+                <p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span>Duis nulla nulla,
+                    faucibus id diam ac, luctus sodales
+                    purus.
+                    Quisque nibh ipsum,Ut accumsan.</p>
+            </div>
+            <div class="item g1">
+                <div class="agile-dish-caption">
+                    <h4>Jecy Deoco</h4>
+                    <span>Lorem Ipsum</span>
+                </div>
+                <img class="lazyOwl" src="{% static 'images/c2.jpg' %}" alt=""/>
+                <div class="clearfix"></div>
+                <p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span>Duis nulla nulla,
+                    faucibus id diam ac, luctus sodales
+                    purus.
+                    Quisque nibh ipsum,Ut accumsan.</p>
+            </div>
+            <div class="item g1">
+                <div class="agile-dish-caption">
+                    <h4>Devid Fahim</h4>
+                    <span>Lorem Ipsum</span>
+                </div>
+                <img class="lazyOwl" src="{% static 'images/c3.jpg' %}" alt=""/>
+                <div class="clearfix"></div>
+                <p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span>Duis nulla nulla,
+                    faucibus id diam ac, luctus sodales
+                    purus.
+                    Quisque nibh ipsum,Ut accumsan.</p>
+            </div>
+        </div>
+        <!--// Owl-Carousel -->
+    </div>
+</div>
+<!--// Clients -->
+{% include 'Footer.html' %}
+
+<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover"
+                                                                         style="opacity: 1;"> </span></a>
+<!-- //smooth scrolling -->
+<script type='text/javascript' src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+
+
+<script src="{% static 'js/jarallax.js' %}"></script>
+
+<script type="text/javascript">
+    /* init Jarallax */
+    $('.jarallax').jarallax({
+        speed: 0.5,
+        imgWidth: 1366,
+        imgHeight: 768
+    })
+</script>
+<!-- flexSlider -->
+<script defer src="{% static 'js/jquery.flexslider.js' %}"></script>
+<script type="text/javascript">
+    $(window).load(function () {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            start: function (slider) {
+                $('body').removeClass('loading');
+            }
+        });
+    });
+</script>
+<!-- //flexSlider -->
+
+<!-- Owl-Carousel-JavaScript -->
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        $("#owl-demo").owlCarousel({
+            items: 2,
+            lazyLoad: true,
+            autoPlay: false,
+            pagination: true,
+        });
+    });
+</script>
+<!-- //Owl-Carousel-JavaScript -->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 1000);
+        });
+    });
+</script>
+<!-- start-smoth-scrolling -->
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+        */
+
+        $().UItoTop({
+            easingType: 'easeOutQuart'
+        });
+
+    });
+</script>
+<!-- //here ends scrolling icon -->
+
+<!-- stats -->
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.countup.js' %}"></script>
+<script>
+    $('.counter').countUp();
+</script>
+<!-- //stats -->
+
+<!--js for bootstrap working-->
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<!-- //for bootstrap working -->
 </body>
+
 </html>

@@ -4,15 +4,15 @@ from django.shortcuts import render
 # Create your views here.
 
 def home(request):
-    pass
+    return render(request, 'index.html')
 
 
 def login(request):
-    return render('')
+    return render(request, 'login.html')
 
 
 def singup(request):
-    pass
+    return render(request, 'Register.html')
 
 
 def checkout(request):

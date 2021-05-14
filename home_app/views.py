@@ -64,3 +64,7 @@ def contactus(request):
 
 def package(request):
     pass
+
+
+def About(request):
+    return render(request, 'about.html')

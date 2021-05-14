@@ -102,7 +102,7 @@ class SocialMedia(models.Model):
         return str(self.id)
 
     class Meta:
-        verbose_name_plural = 'Review'
+        verbose_name_plural = 'Social Media'
 
 
 class Reservation(models.Model):
@@ -117,3 +117,33 @@ class Reservation(models.Model):
 
     class Meta:
         verbose_name_plural = 'Reservation'
+
+
+class About(models.Model):
+    AboutText = models.TextField()
+    AboutPoint1 = models.CharField(max_length=100)
+    AboutPoint2 = models.CharField(max_length=100)
+    AboutPoint3 = models.CharField(max_length=100)
+    About_Picture = models.FileField(upload_to='AboutImage/')
+
+    def __str__(self):
+        return str(self.AboutText)
+
+    class Meta:
+        verbose_name_plural = 'About'
+
+
+class Team(models.Model):
+    Name = models.CharField(max_length=100)
+    Position = models.CharField(max_length=100)
+    About = models.CharField(max_length=100)
+    Picture = models.FileField(upload_to='AboutImage/')
+    Twitter = models.URLField()
+    Instagram = models.URLField()
+    Facebook = models.URLField()
+
+    def __str__(self):
+        return str(self.Name)
+
+    class Meta:
+        verbose_name_plural = 'Team'

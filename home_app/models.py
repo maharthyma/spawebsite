@@ -40,3 +40,80 @@ class Package(models.Model):
 
     class Meta:
         verbose_name_plural = 'Package'
+
+
+class Carousel(models.Model):
+    Heading1 = models.CharField(max_length=100)
+    Heading2 = models.CharField(max_length=100)
+    Paragraph = models.CharField(max_length=100)
+    Image = models.FileField(upload_to='Carousel/')
+
+    def __str__(self):
+        return str(self.Heading1)
+
+    class Meta:
+        verbose_name_plural = 'Carousel'
+
+
+class Service(models.Model):
+    Name = models.CharField(max_length=100)
+    Text = models.TextField(max_length=100)
+    Image = models.FileField(upload_to='Service/')
+
+    def __str__(self):
+        return str(self.Name)
+
+    class Meta:
+        verbose_name_plural = 'Service'
+
+
+class Statistics(models.Model):
+    SERVICES = models.CharField(max_length=100)
+    HAPPY_CLIENTS = models.CharField(max_length=100)
+    PEOPLE_LOVED = models.CharField(max_length=100)
+
+    def __str__(self):
+        return str(self.SERVICES)
+
+    class Meta:
+        verbose_name_plural = 'Statistics'
+
+
+class Review(models.Model):
+    Name = models.CharField(max_length=100)
+    Service = models.CharField(max_length=100)
+    Review = models.TextField(max_length=100)
+    Image = models.FileField(upload_to='Review/')
+
+    def __str__(self):
+        return str(self.Name)
+
+    class Meta:
+        verbose_name_plural = 'Review'
+
+
+class SocialMedia(models.Model):
+    Facebook = models.URLField()
+    Twitter = models.URLField()
+    Instagram = models.URLField()
+    Youtube = models.URLField()
+
+    def __str__(self):
+        return str(self.id)
+
+    class Meta:
+        verbose_name_plural = 'Review'
+
+
+class Reservation(models.Model):
+    Client_Name = models.CharField(max_length=100)
+    Phone_number = models.CharField(max_length=100)
+    Email = models.EmailField()
+    Time = models.DateTimeField()
+    Package = models.ForeignKey(Package, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.Client_Name)
+
+    class Meta:
+        verbose_name_plural = 'Reservation'

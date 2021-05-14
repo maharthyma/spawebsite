@@ -1,12 +1,9 @@
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
-from django.contrib import messages
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.models import User
 from django.template.loader import get_template
 from django.core.mail import EmailMultiAlternatives
 
-# Create your views here.
 from home_app.forms import UserRegisterForm
 
 

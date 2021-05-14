@@ -8,7 +8,7 @@ from home_app.views import *
 urlpatterns = [
     url(r'^$', home, name='home'),
     url(r'login', Login, name='login'),
-    url(r'singup', singup, name='singup'),
+    url(r'singup', Signup, name='singup'),
     url(r'logout', views.LogoutView, name='logout'),
     url(r'checkout', checkout, name='checkout'),
     url(r'portfolio', portfolio, name='portfolio'),

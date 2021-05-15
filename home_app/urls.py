@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'logout', views.LogoutView, name='logout'),
     url(r'checkout', checkout, name='checkout'),
     url(r'About', About_fun, name='About'),
-    url(r'portfolio', portfolio, name='portfolio'),
+    url(r'portfolio', portfolio_fun, name='portfolio'),
     url(r'contactus', contactus, name='contactus'),
     url(r'package', package, name='package'),
 ]

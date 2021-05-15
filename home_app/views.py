@@ -63,15 +63,16 @@ def checkout(request):
     pass
 
 
-def portfolio(request):
+def portfolio_fun(request):
     contactUs = ContactUs.objects.all()
-    return render(request, 'services.html', {'contactUs': contactUs})
+    about_other = About_2.objects.all()
+    Portfolio = portfolio.objects.all()
+    return render(request, 'services.html',
+                  {'contactUs': contactUs, 'about_other': about_other, 'Portfolio': Portfolio})
 
 
 def contactus(request):
     contactUs = ContactUs.objects.all()
-    about = About.objects.all()
-
     return render(request, 'contact.html', {'contactUs': contactUs})
 
 

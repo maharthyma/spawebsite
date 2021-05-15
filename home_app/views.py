@@ -53,7 +53,7 @@ def Signup(request):
             msg.attach_alternative(html_content, "text/html")
             msg.send()
             print(request, f'Your account has been created ! You are now able to log in')
-            return redirect('login')
+            return redirect('home')
     else:
         form = UserRegisterForm()
     return render(request, 'Register.html', {'form': form, 'title': 'reqister here'})

@@ -6,6 +6,10 @@ class ContactUs(models.Model):
     Email = models.EmailField()
     PhoneNumber = models.CharField(max_length=100)
     Location = models.TextField()
+    Facebook = models.URLField()
+    Twitter = models.URLField()
+    Instagram = models.URLField()
+    Youtube = models.URLField()
 
     def __str__(self):
         return str(self.id)
@@ -76,19 +80,6 @@ class Review(models.Model):
 
     class Meta:
         verbose_name_plural = 'Review'
-
-
-class SocialMedia(models.Model):
-    Facebook = models.URLField()
-    Twitter = models.URLField()
-    Instagram = models.URLField()
-    Youtube = models.URLField()
-
-    def __str__(self):
-        return str(self.id)
-
-    class Meta:
-        verbose_name_plural = 'Social Media'
 
 
 class Reservation(models.Model):

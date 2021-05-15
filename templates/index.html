@@ -76,29 +76,6 @@
 <!-- //banner -->
 
 
-<!-- Modal1 -->
-<div class="modal fade" id="myModal4" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4>Beauty Salon</h4>
-                <img src="{% static 'images/11.jpg' %}" alt=" " class="img-responsive">
-                <h5>Neque porro quisquam est qui dolorem </h5>
-                <p>Ut in ligula sollicitudin, auctor elit vel, mollis tortor. Nullam id magna in eros mollis porttitor
-                    vel et eros.Phasellus
-                    sed iaculis nibh, non suscipit tortor. Aenean ante massa, lobortis et dolor eget, sollicitudin
-                    luctus arcu. Donec eros
-                    tortor, ultrices in lectus quis, aliquet commodo lectus.Donec eros tortor, ultrices in lectus quis,
-                    aliquet commodo
-                    lectus.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- //Modal1 -->
-<!-- wthree-mid -->
 <div class="wthree-mid jarallax">
     <img class="jarallax-img" src="{% static 'images/33.jpg' %}" alt="">
     <div class="container">
@@ -112,8 +89,8 @@
         </div>
     </div>
 </div>
-<!-- //wthree-mid -->
-<!-- pricing -->
+
+
 <div class="w3ls-section wthree-pricing" id="pricing">
     <div class="container">
         <div class="wthree_head_section">
@@ -137,10 +114,12 @@
                             <li>{{ x.Offer5 }}</li>
                         </ul>
                         <h4>{{ x.Price }}<span class="sup">$</span></h4>
+                        <div class="more">
+                            <a href="contact.html">Reserve</a>
+                        </div>
                     </div>
                 </div>
             {% endfor %}
-
             <div class="clearfix"></div>
             <!--End-slider-script-->
         </div>

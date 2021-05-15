@@ -63,6 +63,38 @@ def checkout(request):
     pass
 
 
+def reserve(request):
+    package_data = Package.objects.all()
+    contactUs = ContactUs.objects.all()
+    if request.method == 'POST':
+        Pack = request.POST.get("pkg")
+        time = request.POST.get("time")
+        Name = request.POST.get("Name")
+        Email = request.POST.get("Email")
+        Number = request.POST.get("Number")
+        Message = request.POST.get("Message")
+        local_data = Package.objects.get(id=Pack)
+        Reservation.objects.create(
+            Client_Name=Name,
+            Phone_number=Number,
+            Email=Email,
+            Time=time,
+            Message=Message,
+            Package=local_data
+        )
+
+        htmly = get_template('Email1.html')
+        d = {'Name': Name, 'time': time}
+        subject, from_email, to = 'Thank you for Reserving Visit', 'your_email@gmail.com', Email
+        html_content = htmly.render(d)
+        msg = EmailMultiAlternatives(subject, html_content, from_email, [to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
+        return render(request, 'Reserve.html', {'package': package_data, 'contactUs': contactUs, 'success': 'True'})
+    else:
+        return render(request, 'Reserve.html', {'package': package_data, 'contactUs': contactUs})
+
+
 def portfolio_fun(request):
     contactUs = ContactUs.objects.all()
     about_other = About_2.objects.all()
@@ -74,10 +106,6 @@ def portfolio_fun(request):
 def contactus(request):
     contactUs = ContactUs.objects.all()
     return render(request, 'contact.html', {'contactUs': contactUs})
-
-
-def package(request):
-    pass
 
 
 def About_fun(request):

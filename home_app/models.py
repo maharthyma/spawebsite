@@ -86,7 +86,8 @@ class Reservation(models.Model):
     Client_Name = models.CharField(max_length=100)
     Phone_number = models.CharField(max_length=100)
     Email = models.EmailField()
-    Time = models.DateTimeField()
+    Time = models.CharField(max_length=100)
+    Message=models.TextField()
     Package = models.ForeignKey(Package, on_delete=models.CASCADE)
 
     def __str__(self):

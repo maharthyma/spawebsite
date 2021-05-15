@@ -14,9 +14,9 @@ urlpatterns = [
     url(r'logout', views.LogoutView, name='logout'),
     url(r'checkout', checkout, name='checkout'),
     url(r'About', About_fun, name='About'),
+    url(r'reserve', reserve, name='reserve'),
     url(r'portfolio', portfolio_fun, name='portfolio'),
     url(r'contactus', contactus, name='contactus'),
-    url(r'package', package, name='package'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -64,16 +64,25 @@ def checkout(request):
 
 
 def portfolio(request):
-    return render(request, 'services.html')
+    contactUs = ContactUs.objects.all()
+    return render(request, 'services.html', {'contactUs': contactUs})
 
 
 def contactus(request):
-    return render(request, 'contact.html')
+    contactUs = ContactUs.objects.all()
+    about = About.objects.all()
+
+    return render(request, 'contact.html', {'contactUs': contactUs})
 
 
 def package(request):
     pass
 
 
-def About(request):
-    return render(request, 'about.html')
+def About_fun(request):
+    contactUs = ContactUs.objects.all()
+    team = Team.objects.all()
+    about_other = About_2.objects.all()
+    about = About.objects.all()
+    return render(request, 'about.html',
+                  {'contactUs': contactUs, 'about': about, 'about_other': about_other, 'team': team})

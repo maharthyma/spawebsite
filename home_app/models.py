@@ -101,7 +101,7 @@ class About(models.Model):
     AboutPoint1 = models.CharField(max_length=100)
     AboutPoint2 = models.CharField(max_length=100)
     AboutPoint3 = models.CharField(max_length=100)
-    About_Picture = models.FileField(upload_to='AboutImage/')
+    Picture = models.FileField(upload_to='Team/')
 
     def __str__(self):
         return str(self.AboutText)
@@ -114,7 +114,7 @@ class Team(models.Model):
     Name = models.CharField(max_length=100)
     Position = models.CharField(max_length=100)
     About = models.CharField(max_length=100)
-    Picture = models.FileField(upload_to='AboutImage/')
+    Picture = models.FileField(upload_to='Team/')
     Twitter = models.URLField()
     Instagram = models.URLField()
     Facebook = models.URLField()

@@ -5,10 +5,19 @@ from django.template.loader import get_template
 from django.core.mail import EmailMultiAlternatives
 
 from home_app.forms import UserRegisterForm
+from home_app.models import *
 
 
 def home(request):
-    return render(request, 'index.html')
+    carousel = Carousel.objects.all()
+    package = Package.objects.all()
+    statistics = Statistics.objects.all()
+    review = Review.objects.all()
+    about = About_2.objects.all()
+    contactUs = ContactUs.objects.all()
+    return render(request, 'index.html',
+                  {'carousel': carousel, 'package': package, 'statistics': statistics, 'review': review,
+                   'about': about, 'contactUs': contactUs})
 
 
 def Login(request):

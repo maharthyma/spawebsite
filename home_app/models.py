@@ -17,7 +17,7 @@ class ContactUs(models.Model):
 class portfolio(models.Model):
     Name = models.CharField(max_length=100)
     About = models.TextField()
-    Picture = models.FileField(upload_to='Portfolio')
+    Picture = models.FileField(upload_to='Portfolio/')
 
     def __str__(self):
         return str(self.Name)
@@ -46,7 +46,6 @@ class Carousel(models.Model):
     Heading1 = models.CharField(max_length=100)
     Heading2 = models.CharField(max_length=100)
     Paragraph = models.CharField(max_length=100)
-    Image = models.FileField(upload_to='Carousel/')
 
     def __str__(self):
         return str(self.Heading1)
@@ -55,25 +54,12 @@ class Carousel(models.Model):
         verbose_name_plural = 'Carousel'
 
 
-class Service(models.Model):
+class Statistics(models.Model):
     Name = models.CharField(max_length=100)
-    Text = models.TextField(max_length=100)
-    Image = models.FileField(upload_to='Service/')
+    Number = models.CharField(max_length=100)
 
     def __str__(self):
         return str(self.Name)
-
-    class Meta:
-        verbose_name_plural = 'Service'
-
-
-class Statistics(models.Model):
-    SERVICES = models.CharField(max_length=100)
-    HAPPY_CLIENTS = models.CharField(max_length=100)
-    PEOPLE_LOVED = models.CharField(max_length=100)
-
-    def __str__(self):
-        return str(self.SERVICES)
 
     class Meta:
         verbose_name_plural = 'Statistics'
@@ -147,3 +133,14 @@ class Team(models.Model):
 
     class Meta:
         verbose_name_plural = 'Team'
+
+
+class About_2(models.Model):
+    About_Heading = models.CharField(max_length=100)
+    About = models.CharField(max_length=100)
+
+    def __str__(self):
+        return str(self.About_Heading)
+
+    class Meta:
+        verbose_name_plural = 'About (for Home)'

@@ -38,10 +38,21 @@
         <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
             <form class="login100-form validate-form flex-sb flex-w" method="post" action="{% url 'singup' %}">
                 {% csrf_token %}
-                <h2 class="text-center">Register</h2>
-                {{ form|crispy }}
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary login-btn btn-block">Register</button>
+                <div class="row text-center">
+                    <div class="col-12 ">
+                        <h2>Register</h2>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div> {{ form|crispy }}</div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary login-btn btn-block">Register</button>
+                    </div>
+                    <div class="col-12">
+                        <a href="{% url 'login' %}" class="txt3">
+                            Already have an account? Login now
+                        </a>
+                    </div>
                 </div>
             </form>
         </div>

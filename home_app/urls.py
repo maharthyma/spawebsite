@@ -1,7 +1,9 @@
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from django.contrib.auth import views
+from django.conf.urls.static import static
 
 from home_app.views import *
 
@@ -16,3 +18,6 @@ urlpatterns = [
     url(r'contactus', contactus, name='contactus'),
     url(r'package', package, name='package'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

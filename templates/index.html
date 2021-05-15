@@ -1,11 +1,79 @@
 {% load static %}
+{% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html lang="en">
 
 {% include 'Head.html' %}
 
 <body>
-{% include 'Nav-Home.html' %}
+{% load static %}
+<!-- banner -->
+<div class="banner jarallax" id="home">
+    <img class="jarallax-img" src="{% static 'images/22.jpg' %}" alt="">
+    <header>
+        <div class="container">
+            <div class="header-bottom-agileits">
+                <div class="w3-logo">
+                    <h1><a href="/">SPA</a></h1>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </header>
+    <!-- navigation -->
+    <div class="nav-bg">
+        <div class="container">
+            <nav class="navbar navbar-default shift">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a class="active" href="/">Home</a></li>
+                        <li><a href={% url 'About' %}>About</a></li>
+                        <li><a href={% url 'portfolio' %}>Portfolio</a></li>
+                        <li><a href="{% url 'contactus' %}">Contact</a></li>
+                        <li><a href="{% url 'login' %}">Sign in</a></li>
+                        <li><a href="{% url 'singup' %}">Sign Up</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+    </div>
+    <!-- //navigation -->
+    <div class="container">
+        <!-- header -->
+        <!-- //header -->
+        <div class="agileits_w3layouts_banner_info">
+            <section class="slider">
+                <div class="flexslider">
+                    <ul class="slides">
+                        {% for x in carousel %}
+                            <li>
+                                <div class="banner-text-w3-agileits">
+                                    <h5>{{ x.Heading1 }}</h5>
+                                    <h2>{{ x.Heading2 }}</h2>
+                                    <p>{{ x.Paragraph }}</p>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- //banner -->
 
 
 <!-- Modal1 -->
@@ -30,74 +98,17 @@
     </div>
 </div>
 <!-- //Modal1 -->
-<!-- Latest News -->
-<div class="practice-areas">
-    <div class="container">
-        <div class="wthree_head_section">
-            <h3 class="w3l_header">Our <span>Services</span></h3>
-            <p>Treat yourself to a facial or celebrating a special occasion, aromatherapy, our beauty
-                and skin care services will suit every beauty need.</p>
-        </div>
-        <div class="area-main">
-            <div class="col-md-6 area-inner">
-                <div class="area-img1">
-                </div>
-                <div class="area-right p1">
-                    <h5>FACIAL</h5>
-                    <p class="para-w3-agile">Phasellus sed iaculis nibh, non suscipit tortor. Aenean ante massa,
-                        lobortis et dolor eget, sollicitudin luctus
-                        arcu.
-                        Donec eros tortor, ultrices in lectus quis, aliquet commodo lectus.</p>
-                </div>
-            </div>
-            <div class="col-md-6 area-inner">
-                <div class="area-img2">
-                </div>
-                <div class="area-right p2">
-                    <h5>MAKEUP</h5>
-                    <p class="para-w3-agile">Phasellus sed iaculis nibh, non suscipit tortor. Aenean ante massa,
-                        lobortis et dolor eget, sollicitudin luctus
-                        arcu.
-                        Donec eros tortor, ultrices in lectus quis, aliquet commodo lectus.</p>
-                </div>
-            </div>
-        </div>
-        <div class="area-main">
-            <div class="col-md-6 area-inner">
-                <div class="area-right p3">
-                    <h5>NAIL CARE</h5>
-                    <p class="para-w3-agile">Phasellus sed iaculis nibh, non suscipit tortor. Aenean ante massa,
-                        lobortis et dolor eget, sollicitudin luctus
-                        arcu.
-                        Donec eros tortor, ultrices in lectus quis, aliquet commodo lectus.</p>
-                </div>
-                <div class="area-img3">
-                </div>
-            </div>
-            <div class="col-md-6 area-inner">
-                <div class="area-right p4">
-                    <h5>HAIR CARE</h5>
-                    <p class="para-w3-agile">Phasellus sed iaculis nibh, non suscipit tortor. Aenean ante massa,
-                        lobortis et dolor eget, sollicitudin luctus
-                        arcu.
-                        Donec eros tortor, ultrices in lectus quis, aliquet commodo lectus.</p>
-                </div>
-                <div class="area-img4">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- //Latest News -->
 <!-- wthree-mid -->
 <div class="wthree-mid jarallax">
     <img class="jarallax-img" src="{% static 'images/33.jpg' %}" alt="">
     <div class="container">
-        <h3>Nisl amet dolor sit ipsum veroeros sed blandit</h3>
-        <p>Standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-            make a type specimen book</p>
+        {% for x in about %}
+            <h3>{{ x.About_Heading }}</h3>
+            <p>{{ x.About }}</p>
+        {% endfor %}
+
         <div class="botton">
-            <a href="about.html">About Us</a>
+            <a href="{% url 'About' %}">About Us</a>
         </div>
     </div>
 </div>
@@ -106,83 +117,30 @@
 <div class="w3ls-section wthree-pricing" id="pricing">
     <div class="container">
         <div class="wthree_head_section">
+
             <h3 class="w3l_header">Packages <span>Pricing</span></h3>
-            <p>Treat yourself to a facial or celebrating a special occasion, aromatherapy, our beauty
-                and skin care services will suit every beauty need.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim</p>
         </div>
         <div class="pricing-grids-info">
-            <div class="pricing-grid grid-one">
-                <div class="w3ls-top">
-                    <h3>Basic</h3>
-                </div>
-                <div class="w3ls-bottom">
-                    <ul class="count">
-                        <li>Hair Extension</li>
-                        <li>Makeup Application</li>
-                        <li>Facial</li>
-                        <li>Nails</li>
-                        <li>Styling</li>
-                    </ul>
-                    <h4> 200<span class="sup">$</span></h4>
-                    <div class="more">
-                        <a href="contact.html">Contact Now</a>
+            {% for x in package %}
+                <div class="pricing-grid grid-one" style="margin-right: 2%">
+                    <div class="w3ls-top">
+                        <h3>{{ x.Name }}</h3>
+                    </div>
+                    <div class="w3ls-bottom">
+                        <ul class="count">
+                            <li>{{ x.Offer1 }}</li>
+                            <li>{{ x.Offer2 }}</li>
+                            <li>{{ x.Offer3 }}</li>
+                            <li>{{ x.Offer4 }}</li>
+                            <li>{{ x.Offer5 }}</li>
+                        </ul>
+                        <h4>{{ x.Price }}<span class="sup">$</span></h4>
                     </div>
                 </div>
-            </div>
-            <div class="pricing-grid grid-two">
-                <div class="w3ls-top">
-                    <h3>Classic</h3>
-                </div>
-                <div class="w3ls-bottom">
-                    <ul class="count">
-                        <li>Hair Extension</li>
-                        <li>Makeup Application</li>
-                        <li>Facial</li>
-                        <li>Nails</li>
-                        <li>Styling</li>
-                    </ul>
-                    <h4> 350<span class="sup">$</span></h4>
-                    <div class="more">
-                        <a href="contact.html">Contact Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="pricing-grid grid-three">
-                <div class="w3ls-top">
-                    <h3>Gold</h3>
-                </div>
-                <div class="w3ls-bottom">
-                    <ul class="count">
-                        <li>Hair Extension</li>
-                        <li>Makeup Application</li>
-                        <li>Facial</li>
-                        <li>Nails</li>
-                        <li>Styling</li>
-                    </ul>
-                    <h4> 500<span class="sup">$</span></h4>
-                    <div class="more">
-                        <a href="contact.html">Contact Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="zb pricing-grid grid-four">
-                <div class="w3ls-top">
-                    <h3>Platinum</h3>
-                </div>
-                <div class="w3ls-bottom">
-                    <ul class="count">
-                        <li>Hair Extension</li>
-                        <li>Makeup Application</li>
-                        <li>Facial</li>
-                        <li>Nails</li>
-                        <li>Styling</li>
-                    </ul>
-                    <h4> 800<span class="sup">$</span></h4>
-                    <div class="more">
-                        <a href="contact.html">Contact Now</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+
             <div class="clearfix"></div>
             <!--End-slider-script-->
         </div>
@@ -196,58 +154,24 @@
         <div class="container">
             <div class="wthree_head_section">
                 <h3 class="w3l_header two">Our <span>Statistics</span></h3>
-                <p class="tho">Treat yourself to a facial or celebrating a special occasion, aromatherapy, our beauty
-                    and skin care services will suit every beauty need.</p>
+                <p class="tho"> dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non</p>
             </div>
             <div class="wthree-agile-counter">
-                <div class="col-md-3 w3_agile_stats_grid-top">
-                    <div class="w3_agile_stats_grid">
-                        <div class="agile_count_grid_left">
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                {% for x in statistics %}
+                    <div class="col-md-4 w3_agile_stats_grid-top">
+                        <div class="w3_agile_stats_grid">
+                            <div class="agile_count_grid_left">
+                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                            </div>
+                            <div class="agile_count_grid_right">
+                                <p class="counter">{{ x.Number }}</p>
+                            </div>
+                            <div class="clearfix"></div>
+                            <h4>{{ x.Name }}</h4>
                         </div>
-                        <div class="agile_count_grid_right">
-                            <p class="counter">324</p>
-                        </div>
-                        <div class="clearfix"></div>
-                        <h4>Services</h4>
                     </div>
-                </div>
-                <div class="col-md-3 w3_agile_stats_grid-top">
-                    <div class="w3_agile_stats_grid">
-                        <div class="agile_count_grid_left">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        </div>
-                        <div class="agile_count_grid_right">
-                            <p class="counter">543</p>
-                        </div>
-                        <div class="clearfix"></div>
-                        <h4>Happy Clients</h4>
-                    </div>
-                </div>
-                <div class="col-md-3 w3_agile_stats_grid-top">
-                    <div class="w3_agile_stats_grid">
-                        <div class="agile_count_grid_left">
-                            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-                        </div>
-                        <div class="agile_count_grid_right">
-                            <p class="counter">434</p>
-                        </div>
-                        <div class="clearfix"></div>
-                        <h4>People Loved</h4>
-                    </div>
-                </div>
-                <div class="col-md-3 w3_agile_stats_grid-top">
-                    <div class="w3_agile_stats_grid">
-                        <div class="agile_count_grid_left">
-                            <span class="fa fa-trophy" aria-hidden="true"></span>
-                        </div>
-                        <div class="agile_count_grid_right">
-                            <p class="counter">234</p>
-                        </div>
-                        <div class="clearfix"></div>
-                        <h4>Win Awards</h4>
-                    </div>
-                </div>
+                {% endfor %}
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -260,82 +184,21 @@
         <!-- Owl-Carousel -->
         <div class="wthree_head_section">
             <h3 class="w3l_header">What <span>People Say</span></h3>
-            <p>Treat yourself to a facial or celebrating a special occasion, aromatherapy, our beauty
-                and skin care services will suit every beauty need.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim</p>
         </div>
         <div id="owl-demo" class="owl-carousel text-center clients-right">
-            <div class="item g1">
-                <div class="agile-dish-caption">
-                    <h4>John Smith</h4>
-                    <span>Lorem Ipsum</span>
+            {% for x in review %}
+                <div class="item g1">
+                    <div class="agile-dish-caption">
+                        <h4>{{ x.Name }}</h4>
+                        <span>{{ x.Service }}</span>
+                    </div>
+                    <img class="lazyOwl" src="{{ MEDIA_URL }}{{ x.Image }}" alt=""/>
+                    <div class="clearfix"></div>
+                    <p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span>{{ x.Review }}</p>
                 </div>
-                <img class="lazyOwl" src="{% static 'images/c1.jpg' %}" alt=""/>
-                <div class="clearfix"></div>
-                <p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span>Duis nulla nulla,
-                    faucibus id diam ac, luctus sodales
-                    purus.
-                    Quisque nibh ipsum,Ut accumsan.</p>
-            </div>
-            <div class="item g1">
-                <div class="agile-dish-caption">
-                    <h4>Jecy Deoco</h4>
-                    <span>Lorem Ipsum</span>
-                </div>
-                <img class="lazyOwl" src="{% static 'images/c2.jpg' %}" alt=""/>
-                <div class="clearfix"></div>
-                <p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span>Duis nulla nulla,
-                    faucibus id diam ac, luctus sodales
-                    purus.
-                    Quisque nibh ipsum,Ut accumsan.</p>
-            </div>
-            <div class="item g1">
-                <div class="agile-dish-caption">
-                    <h4>Devid Fahim</h4>
-                    <span>Lorem Ipsum</span>
-                </div>
-                <img class="lazyOwl" src="{% static 'images/c3.jpg' %}" alt=""/>
-                <div class="clearfix"></div>
-                <p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span>Duis nulla nulla,
-                    faucibus id diam ac, luctus sodales
-                    purus.
-                    Quisque nibh ipsum,Ut accumsan.</p>
-            </div>
-            <div class="item g1">
-                <div class="agile-dish-caption">
-                    <h4>Honey Jisa</h4>
-                    <span>Lorem Ipsum</span>
-                </div>
-                <img class="lazyOwl" src="{% static 'images/c1.jpg' %}" alt=""/>
-                <div class="clearfix"></div>
-                <p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span>Duis nulla nulla,
-                    faucibus id diam ac, luctus sodales
-                    purus.
-                    Quisque nibh ipsum,Ut accumsan.</p>
-            </div>
-            <div class="item g1">
-                <div class="agile-dish-caption">
-                    <h4>Jecy Deoco</h4>
-                    <span>Lorem Ipsum</span>
-                </div>
-                <img class="lazyOwl" src="{% static 'images/c2.jpg' %}" alt=""/>
-                <div class="clearfix"></div>
-                <p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span>Duis nulla nulla,
-                    faucibus id diam ac, luctus sodales
-                    purus.
-                    Quisque nibh ipsum,Ut accumsan.</p>
-            </div>
-            <div class="item g1">
-                <div class="agile-dish-caption">
-                    <h4>Devid Fahim</h4>
-                    <span>Lorem Ipsum</span>
-                </div>
-                <img class="lazyOwl" src="{% static 'images/c3.jpg' %}" alt=""/>
-                <div class="clearfix"></div>
-                <p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span>Duis nulla nulla,
-                    faucibus id diam ac, luctus sodales
-                    purus.
-                    Quisque nibh ipsum,Ut accumsan.</p>
-            </div>
+            {% endfor %}
         </div>
         <!--// Owl-Carousel -->
     </div>
